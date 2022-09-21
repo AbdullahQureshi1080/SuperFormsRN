@@ -27,6 +27,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { NavigationContainer} from '@react-navigation/native';
+
+
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
@@ -65,6 +68,7 @@ const App = () => {
   };
 
   return (
+    <NavigationContainer>
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -95,6 +99,7 @@ const App = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
+    </NavigationContainer>
   );
 };
 

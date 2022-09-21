@@ -4,6 +4,10 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+//For React-Native Screens
+import android.os.Bundle;
+
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -13,6 +17,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "SuperFormsRN";
+  }
+
+//For React-Native Screens
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
   }
 
   /**
