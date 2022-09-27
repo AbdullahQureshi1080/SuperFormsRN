@@ -4,8 +4,8 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
-//For React-Native Screens
-import android.os.Bundle;
+// //For React-Native Screens
+// import android.os.Bundle;
 
 
 public class MainActivity extends ReactActivity {
@@ -19,11 +19,11 @@ public class MainActivity extends ReactActivity {
     return "SuperFormsRN";
   }
 
-//For React-Native Screens
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-  }
+// //For React-Native Screens
+//   @Override
+//   protected void onCreate(Bundle savedInstanceState) {
+//   super.onCreate(null);
+//   }
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
