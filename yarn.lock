@@ -1349,10 +1349,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@legendapp/state@^0.17.1":
-  "integrity" "sha512-GCm/thZELewPzh0KtVSmirMis/S3Qy3oVoHLrYKYfow5CktEJDNiMD9z4WYXBPoZAsF4/fMGHyYZ+kZv70MPTA=="
-  "resolved" "https://registry.npmjs.org/@legendapp/state/-/state-0.17.1.tgz"
-  "version" "0.17.1"
+"@legendapp/state@^0.18.1":
+  "integrity" "sha512-4lc1g4KJnhb674W/QF0VwCpXu2G+lbiFh6M/gTZnh6tkHHdgyz90sk9XzVvnvmO6IPcJviBYKyQJR2/y+888KA=="
+  "resolved" "https://registry.npmjs.org/@legendapp/state/-/state-0.18.1.tgz"
+  "version" "0.18.1"
 
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
