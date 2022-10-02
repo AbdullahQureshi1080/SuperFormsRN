@@ -7,10 +7,10 @@
 
     /* Completeness */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
-    "strict": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
+    "useUnknownInCatchVariables": false,
   }
 }

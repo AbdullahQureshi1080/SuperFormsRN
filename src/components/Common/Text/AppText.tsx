@@ -1,6 +1,6 @@
 // React Imports
 import {Text, StyleProp} from 'react-native';
-import React, {FC, ReactNode} from 'react';
+import React, {ReactNode} from 'react';
 
 // Styles Import
 import styles from './AppTextStyles';
@@ -10,8 +10,9 @@ export type TextProps = {
   textStyle?: StyleProp<any>;
 };
 
-const AppText: FC<TextProps> = ({children, textStyle}) => {
+const AppText = (props: TextProps) => {
+  const {children, textStyle} = props;
   return <Text style={[styles.text, textStyle]}>{children}</Text>;
 };
 
-export default AppText;
+export {AppText};

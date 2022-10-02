@@ -5,4 +5,4 @@ SEMIBOLD:"Poppins-SemiBold",
 BOLD:"Poppins-Bold"
 }
 
-export default font;
+export  {font};

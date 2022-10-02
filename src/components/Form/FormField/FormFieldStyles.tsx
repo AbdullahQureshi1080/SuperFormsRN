@@ -1,45 +1,47 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../../constants/colors';
-import {font} from '../../../constants/font';
+import font from '../../../constants/font';
 
 const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     fontFamily: font.MEDIUM,
-    color: colors.text,
-    marginHorizontal: 2,
+    color: '#474A56',
   },
   inputContainer: {
+    // width: '100%',
+    // backgroundColor: '#D3D5FD',
     marginHorizontal: 20,
-
+    // paddingVertical: 0,
     borderWidth: 0.6,
     borderRadius: 8,
     borderColor: '#929AAB',
     paddingHorizontal: 10,
     paddingVertical: 2,
+    // flexDirection: 'row',
   },
   contentContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   input: {
+    marginHorizontal: 5,
     fontSize: 16,
     fontFamily: font.REGULAR,
-    color: colors.text,
+    color: '#474A56',
     width: '95%',
+    // backgroundColor: 'red',
+    // borderWidth: 0.6,
+    // borderRadius: 8,
+    // borderColor: '#929AAB',
+    // paddingHorizontal: 10,
   },
   cursor: {
-    color: colors.grey,
+    color: '#929AAB',
   },
   assistiveText: {
     fontSize: 12,
     fontFamily: font.REGULAR,
-    color: colors.grey,
-  },
-  errorText: {
-    fontSize: 12,
-    fontFamily: font.REGULAR,
-    color: colors.error,
+    color: '#929AAB',
   },
 });
 
