@@ -3,15 +3,14 @@ import {colors} from '../../../constants/colors';
 import {font} from '../../../constants/font';
 
 const styles = StyleSheet.create({
-  label: {
+  labelStyle: {
     fontSize: 14,
     fontFamily: font.MEDIUM,
     color: colors.text,
     marginHorizontal: 2,
   },
-  inputContainer: {
+  containerStyle: {
     marginHorizontal: 20,
-
     borderWidth: 0.6,
     borderRadius: 8,
     borderColor: '#929AAB',
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  input: {
+  inputStyle: {
     fontSize: 16,
     fontFamily: font.REGULAR,
     color: colors.text,
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
   cursor: {
     color: colors.grey,
   },
-  assistiveText: {
+  assistiveTextStyle: {
     fontSize: 12,
     fontFamily: font.REGULAR,
     color: colors.grey,

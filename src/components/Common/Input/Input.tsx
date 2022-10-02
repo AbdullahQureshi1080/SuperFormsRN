@@ -1,5 +1,5 @@
 import {View, TextInput, StyleProp} from 'react-native';
-import React, {ReactNode, useEffect} from 'react';
+import React, {ReactNode} from 'react';
 
 import {AppText} from '../Text/AppText';
 
@@ -10,15 +10,15 @@ import {colors} from '../../../constants/colors';
 export interface InputProps {
   value?: string;
   onChangeText?: (e: React.ChangeEvent | string) => void;
-  style?: StyleProp<any>;
   editable?: boolean;
   label?: string;
   labelStyle?: StyleProp<any>;
   containerStyle?: StyleProp<any>;
+  assistiveTextStyle?: StyleProp<any>;
+  inputStyle?: StyleProp<any>;
   hideLabel?: boolean;
   autoFocus?: boolean;
   assistiveText?: string;
-  assistiveTextStyle?: StyleProp<any>;
   renderIcon?: () => ReactNode;
   iconPlacement?: 'LEFT' | 'RIGHT';
   placeholder?: string;
@@ -45,8 +45,8 @@ const Input = (props: InputProps) => {
     errorMessage,
     errorVisibility,
     showErrorMessage,
+    inputStyle,
   } = props;
-
 
   const styleInputWithIcon: StyleProp<any> = {
     flexDirection: iconPlacement === 'RIGHT' ? 'row-reverse' : 'row',
@@ -57,11 +57,10 @@ const Input = (props: InputProps) => {
     borderColor: errorVisibility && errorMessage ? colors.error : colors.grey,
   };
 
-  // => {
   return (
-    <View style={[styles.inputContainer, styleInputWithError, containerStyle]}>
+    <View style={[styles.containerStyle, styleInputWithError, containerStyle]}>
       {hideLabel ? null : (
-        <AppText textStyle={[styles.label, labelStyle]}>{label}</AppText>
+        <AppText textStyle={[styles.labelStyle, labelStyle]}>{label}</AppText>
       )}
       <View style={[styles.contentContainer, styleInputWithIcon]}>
         {renderIcon ? renderIcon() : null}
@@ -70,7 +69,7 @@ const Input = (props: InputProps) => {
           value={value}
           onChangeText={onChangeText}
           editable={editable}
-          style={styles.input}
+          style={[styles.inputStyle, inputStyle]}
           cursorColor={styles.cursor.color}
           autoFocus={autoFocus}
           placeholder={placeholder}
@@ -78,7 +77,7 @@ const Input = (props: InputProps) => {
         />
       </View>
       {assistiveText && !errorVisibility ? (
-        <AppText textStyle={[styles.assistiveText, assistiveTextStyle]}>
+        <AppText textStyle={[styles.assistiveTextStyle, assistiveTextStyle]}>
           {assistiveText}
         </AppText>
       ) : null}

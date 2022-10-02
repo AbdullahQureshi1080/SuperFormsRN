@@ -1,5 +1,3 @@
-export enum InputEnums   {
-    Left='LEFT',
-    Right='RIGHT'
+export enum FormFieldEnums   {
 } 
 

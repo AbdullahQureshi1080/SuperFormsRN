@@ -1,5 +1,5 @@
 export enum InputEnums   {
-    Left='LEFT',
-    Right='RIGHT'
+    LEFT='LEFT',
+    RIGHT='RIGHT'
 } 
 

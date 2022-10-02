@@ -3,24 +3,28 @@ import {colors} from '../../../constants/colors';
 import {font} from '../../../constants/font';
 
 const styles = StyleSheet.create({
-  label: {
-    fontSize: 14,
+  labelStyle: {
+    fontSize: 16,
     fontFamily: font.MEDIUM,
     color: colors.text,
     marginHorizontal: 2,
+    width: `85%`,
+    // backgroundColor: 'red',
+    textAlign: 'center',
   },
-  inputContainer: {
-    marginHorizontal: 20,
-
-    borderWidth: 0.6,
+  containerStyle: {
     borderRadius: 8,
-    borderColor: '#929AAB',
-    paddingHorizontal: 10,
-    paddingVertical: 2,
+    // borderWidth: 0.6,
+    marginHorizontal: 20,
+    backgroundColor: colors.primary,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  contentContainer: {
+  contentStyle: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   input: {
     fontSize: 16,
