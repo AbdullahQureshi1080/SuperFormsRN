@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   containerStyle: {
+    marginVertical: 2.5,
     borderRadius: 8,
     // borderWidth: 0.6,
     marginHorizontal: 20,
@@ -20,6 +21,7 @@ const styles = StyleSheet.create({
     height: 44,
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
   },
   contentStyle: {
     flexDirection: 'row',

@@ -1,7 +1,7 @@
 import {View, TextInput, StyleProp} from 'react-native';
 import React, {ReactNode} from 'react';
 
-import {AppText} from '../Text/AppText';
+import {AppText} from '@Components';
 
 // Styles Import
 import styles from './InputStyles';
@@ -90,4 +90,4 @@ const Input = (props: InputProps) => {
   );
 };
 
-export {Input};
+export default Input;

@@ -1,6 +1,6 @@
 // Native Imports
 import React, {ReactNode} from 'react';
-import {} from 'react-native';
+// import {} from 'react-native';
 
 // Formik Imports
 import {Formik, FormikHelpers, FormikValues} from 'formik';
@@ -32,4 +32,4 @@ const Form = (props: FormProps) => {
   );
 };
 
-export {Form};
+export default Form;

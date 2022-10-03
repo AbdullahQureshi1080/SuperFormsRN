@@ -19,4 +19,4 @@ const AppText = (props: CTextProps) => {
   );
 };
 
-export {AppText};
+export default AppText;

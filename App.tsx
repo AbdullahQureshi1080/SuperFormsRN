@@ -13,15 +13,15 @@ import React, {useRef} from 'react';
 import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
 
 // import {observable} from '@legendapp/state';
-import {Form} from './src/components/Form/Form';
-import {FormField} from './src/components/Form/FormField/FormField';
+
+import {Form, FormField, Button, SubmitButton} from '@Components';
 
 // Supporting Imports
 import * as Yup from 'yup';
-import {Button} from './src/components/Common/Button/Button';
 
 import Entypo from 'react-native-vector-icons/Entypo';
 import {ButtonEnums} from './src/components/Common/Button/ButtonEnums';
+// import {ButtonEnums} from './src/components/Common/Button/ButtonEnums';
 
 // // Input State
 // const inputState = observable({input: '' as string});
@@ -48,15 +48,9 @@ const App = () => {
             onSubmit={handleSubmit}
             enableReinitialize={true}>
             <FormField name="email" label="Email" showErrorMessage={true} />
+            <SubmitButton name="Login" />
           </Form>
         </View>
-        <Button
-          name="Submit"
-          // loading={true}
-          disabled={true}
-          // renderIcon={() => <Entypo name="email" size={24} color={'#000'} />}
-          // iconPlacement={ButtonEnums.Right}
-        />
       </ScrollView>
     </SafeAreaView>
   );

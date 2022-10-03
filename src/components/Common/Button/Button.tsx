@@ -4,18 +4,21 @@ import {
   TouchableOpacity,
   GestureResponderEvent,
   ActivityIndicator,
+  TouchableOpacityProps,
+  Dimensions,
 } from 'react-native';
 import React, {ReactNode, useEffect} from 'react';
 
-import {AppText} from '../Text/AppText';
+// import {AppText} from '../Text/AppText';
 
 // Styles Import
 import styles from './ButtonStyles';
 import {colors} from '../../../constants/colors';
 import {Generic} from '../../../constants/enums/Generic';
 import {ButtonEnums} from './ButtonEnums';
+import {AppText} from '@Components';
 
-export interface ButtonProps {
+export interface ButtonProps extends TouchableOpacityProps {
   containerStyle?: StyleProp<any>;
   labelStyle?: StyleProp<any>;
   contentStyle?: StyleProp<any>;
@@ -27,6 +30,7 @@ export interface ButtonProps {
   errorVisibility?: boolean;
   iconPlacement?: 'LEFT' | 'RIGHT';
   onPress?: (event: GestureResponderEvent) => void;
+  iconOnly?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
@@ -36,12 +40,13 @@ const Button = (props: ButtonProps) => {
     contentStyle,
     loading,
     name,
-    disabled,
-    type,
+    disabled = false,
+    type = ButtonEnums.PRIMARY,
     renderIcon,
     errorVisibility,
     iconPlacement = 'RIGHT',
     onPress,
+    iconOnly = false,
   } = props;
 
   const styleButtonWithIcon: StyleProp<any> = {
@@ -58,16 +63,41 @@ const Button = (props: ButtonProps) => {
   };
 
   const styleButtonLabelWhenDisabled: StyleProp<any> = {
-    color: disabled ? colors.white : colors.primary,
+    color: disabled ? colors.white : colors.text,
   };
 
   const styleButtonLabelWhenIconIsPresent: StyleProp<any> = {
     marginLeft: renderIcon ? 15 : 2,
   };
 
-  const calculateButtonWithBasedOnType = () => {
-    // if(type == )
+  const calculateButtonWithBasedOnType = (): StyleProp<any> => {
+    if (type === ButtonEnums.SMALL) {
+      return {width: Dimensions.get('window').width / 3};
+    }
+    if (type === ButtonEnums.STEPPER) {
+      return {width: Dimensions.get('window').width / 4};
+    }
+    if (type === ButtonEnums.MODAL) {
+      return {width: Dimensions.get('window').width / 1.75};
+    }
+    if (type === ButtonEnums.PRIMARY) {
+      return {width: Dimensions.get('window').width / 1.15};
+    }
+    if (type === ButtonEnums.ICON) {
+      return {width: Dimensions.get('window').width / 6};
+    }
+    if (type === ButtonEnums.CUSTOM) {
+      return {width: Dimensions.get('window').width / 2.25};
+    }
   };
+
+  useEffect(() => {
+    if (iconOnly && !renderIcon) {
+      console.warn(
+        `Button Component Warning: Please render a icon, renderIcon prop is must when iconOnly prop is ${iconOnly}`,
+      );
+    }
+  }, [iconOnly, renderIcon]);
 
   // => {
   return (
@@ -77,6 +107,7 @@ const Button = (props: ButtonProps) => {
         styles.containerStyle,
         styleButtonWhenDisabled,
         styleButtonWithError,
+        calculateButtonWithBasedOnType(),
         containerStyle,
       ]}
       onPress={onPress}>
@@ -84,7 +115,7 @@ const Button = (props: ButtonProps) => {
         {renderIcon ? renderIcon() : null}
         {loading ? (
           <ActivityIndicator size={Generic.SMALL} color={colors.grey} />
-        ) : (
+        ) : iconOnly ? null : (
           <AppText
             numberOfLines={1}
             textStyle={[
@@ -101,4 +132,4 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-export {Button};
+export default Button;
