@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 2,
   },
   containerStyle: {
+    marginBottom: 10,
     marginHorizontal: 20,
     borderWidth: 0.6,
     borderRadius: 8,

@@ -17,8 +17,6 @@ const SubmitButton = (props: SubmitButtonProps) => {
   const {handleSubmit} = useFormikContext();
   const {name} = props;
 
-  console.log('Name', name);
-
   return <Button name={name} onPress={handleSubmit} />;
 };
 

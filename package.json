@@ -1,26 +1,21 @@
 {
   "name": "superformsrn",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
   },
   "dependencies": {
-    "@legendapp/state": "^0.18.1",
-    "apisauce": "^2.1.6",
     "formik": "^2.2.9",
-    "lottie-ios": "^3.4.0",
-    "lottie-react-native": "^5.1.4",
     "moment": "^2.29.4",
     "react": "18.1.0",
     "react-native": "0.70.1",
-    "react-native-config": "^1.4.6",
-    "react-native-keychain": "^8.1.1",
-    "react-native-mmkv": "^2.4.3",
     "react-native-vector-icons": "^9.2.0",
     "yup": "^0.32.11"
   },
@@ -37,10 +32,12 @@
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.72.1",
     "react-test-renderer": "18.1.0",
+    "semantic-release": "^19.0.5",
     "typescript": "^4.8.3"
   },
   "jest": {
@@ -53,5 +50,14 @@
       "json",
       "node"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbdullahQureshi1080/SuperFormsRN.git"
   }
 }

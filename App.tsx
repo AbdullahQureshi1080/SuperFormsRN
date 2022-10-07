@@ -27,14 +27,33 @@ import {ButtonEnums} from './src/components/Common/Button/ButtonEnums';
 // const inputState = observable({input: '' as string});
 // const setInputState = (text: string) => inputState.input.set(text);
 
+import {FormikValues} from 'formik';
+
 const App = () => {
   const renders = ++useRef(0).current;
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().required('Email is required').email().label('Email'),
+    password: Yup.string()
+      .required('Password is required')
+      .label('Password')
+      .test(
+        'strongPassword',
+        'The password must contain a minimum of eight characters with at least one uppercase, lowercase, number, and special character',
+        function (value: string | undefined) {
+          var format =
+            /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/;
+          if (format.test(value!)) {
+            return true;
+          }
+          return false;
+        },
+      ),
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = (values: FormikValues) => {
+    console.log('Values', values);
+  };
 
   return (
     <SafeAreaView style={{backgroundColor: '#f8f8f8', flex: 1}}>
@@ -48,6 +67,11 @@ const App = () => {
             onSubmit={handleSubmit}
             enableReinitialize={true}>
             <FormField name="email" label="Email" showErrorMessage={true} />
+            <FormField
+              name="password"
+              label="Password"
+              showErrorMessage={true}
+            />
             <SubmitButton name="Login" />
           </Form>
         </View>
