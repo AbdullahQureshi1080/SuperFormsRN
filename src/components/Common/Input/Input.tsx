@@ -43,7 +43,7 @@ const Input = (props: InputProps) => {
     placeholder = label,
     errorMessage,
     errorVisibility,
-    showErrorMessage,
+    showErrorMessage = true,
     inputStyle,
   } = props;
 

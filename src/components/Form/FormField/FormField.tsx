@@ -18,6 +18,7 @@ const FormField = (props: FormFieldProps) => {
   return (
     <Input
       {...props}
+      // @ts-ignore
       onBlur={() => {
         setFieldTouched(name);
       }}
