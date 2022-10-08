@@ -60,10 +60,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AbdullahQureshi1080/SuperFormsRN.git"
-  },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ]
+  }
 }
