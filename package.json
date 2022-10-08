@@ -9,14 +9,16 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "my-android-win": "powershell -command .\\scripts\\remove.ps1",
+    "my-android-mac": " ./scripts/remove.sh"
   },
   "dependencies": {
+    "@superforms/superforms-rn": "file:src/components/superforms-superforms-rn-0.0.1.tgz",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
     "react": "18.1.0",
     "react-native": "0.70.1",
-    "react-native-builder-bob": "^0.18.3",
     "react-native-vector-icons": "^9.2.0",
     "yup": "^0.32.11"
   },
@@ -50,6 +52,9 @@
       "jsx",
       "json",
       "node"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib/"
     ]
   },
   "config": {

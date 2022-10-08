@@ -5,7 +5,7 @@ module.exports = {
       'module-resolver',
       {
         alias: {
-          '@Components': './src/components',
+          '@Components': './src/components/src',
         },
       },
     ],

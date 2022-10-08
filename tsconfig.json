@@ -6,7 +6,7 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
   "baseUrl": ".",
   "paths": {
-      "@Components":["./src/components"],
+      "@Components":["./src/components/src"],
     },
     /* Completeness */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
@@ -16,12 +16,10 @@
     "noUnusedLocals": true,
     "useUnknownInCatchVariables": false,
     // "declaration": true,
+    "noEmit": false,
+    "emitDeclarationOnly": false
   },
-  "include": [
-    "src"
-  ],
   "exclude": [
-    "node_modules",
     "**/__tests__/*",
   ],
 }

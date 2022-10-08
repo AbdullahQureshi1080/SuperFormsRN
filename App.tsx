@@ -12,8 +12,9 @@
 import React, {useRef} from 'react';
 import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
 
+// import {Form, FormField, SubmitButton} from '@Components';
 
-import {Form, FormField, SubmitButton} from '@Components';
+import {Form, FormField, SubmitButton} from '@superforms/superforms-rn';
 
 // Supporting Imports
 import * as Yup from 'yup';
@@ -25,18 +26,20 @@ const validationSchema = Yup.object().shape({
   password: Yup.string()
     .required('Password is required')
     .label('Password')
-    .test(
-      'strongPassword',
-      'The password must contain a minimum of eight characters with at least one uppercase, lowercase, number, and special character',
-      function (value: string | undefined) {
-        var format =
-          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/;
-        if (format.test(value!)) {
-          return true;
-        }
-        return false;
-      },
-    ),
+    .min(5),
+  // .test(
+  //   'strongPassword',
+  //   'The password must contain a minimum of eight characters with at least one uppercase, lowercase, number, and special character',
+  //   function (value: string | undefined) {
+  //     var format =
+  //       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/;
+  //     if (format.test(value!)) {
+  //       return true;
+  //     }
+  //     return false;
+  //   },
+  // ),
+  fullName: Yup.string().required('Name is required').label('Full Name'),
 });
 
 const App = () => {
@@ -53,16 +56,13 @@ const App = () => {
         <Text style={{color: '#000'}}>renders:{renders}</Text>
         <View style={{marginTop: 20, marginBottom: 20}}>
           <Form
-            initialValues={{email: ''}}
+            initialValues={{email: '', fullName: '', password: ''}}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
             enableReinitialize={true}>
-            <FormField name="email" label="Email" showErrorMessage={true} />
-            <FormField
-              name="password"
-              label="Password"
-              showErrorMessage={true}
-            />
+            <FormField name="email" label="Email" />
+            <FormField name="password" label="Password" />
+            <FormField name="fullName" label="Full Name" />
             <SubmitButton name="Login" />
           </Form>
         </View>
