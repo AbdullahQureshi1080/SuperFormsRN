@@ -9,14 +9,12 @@ import {
 } from 'react-native';
 import React, {ReactNode, useEffect} from 'react';
 
-// import {AppText} from '../Text/AppText';
-
 // Styles Import
 import styles from './ButtonStyles';
-import {colors} from '../../../constants/colors';
-import {Generic} from '../../../constants/enums/Generic';
+import {colors} from '../../assets/colors';
+import {Generic} from '../../assets/enums/Generic';
 import {ButtonEnums} from './ButtonEnums';
-import {AppText} from '@Components';
+import AppText from '../Text/AppText';
 
 export interface ButtonProps extends TouchableOpacityProps {
   containerStyle?: StyleProp<any>;

@@ -1,13 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../../constants/colors';
-import {font} from '../../../constants/font';
+import {colors} from '../../assets/colors';
 
 const styles = StyleSheet.create({
   labelStyle: {
     fontSize: 14,
-    fontFamily: font.MEDIUM,
     color: colors.text,
-    marginHorizontal: 2,
+    marginHorizontal: 4,
+    fontWeight: '600',
   },
   containerStyle: {
     marginBottom: 10,
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     fontSize: 16,
-    fontFamily: font.REGULAR,
     color: colors.text,
     width: '95%',
   },
@@ -33,12 +31,10 @@ const styles = StyleSheet.create({
   },
   assistiveTextStyle: {
     fontSize: 12,
-    fontFamily: font.REGULAR,
     color: colors.grey,
   },
   errorText: {
     fontSize: 12,
-    fontFamily: font.REGULAR,
     color: colors.error,
   },
 });

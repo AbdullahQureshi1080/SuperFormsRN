@@ -1,12 +1,10 @@
 import {StyleSheet} from 'react-native';
-
-import {font} from '../../../constants/font';
+import {colors} from '../../assets/colors';
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 20,
-    color: '#0B0B0D',
-    fontFamily: font.REGULAR,
+    color: colors.emphasis,
   },
 });
 

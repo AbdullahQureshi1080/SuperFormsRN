@@ -1,21 +1,17 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../../constants/colors';
-import {font} from '../../../constants/font';
+import {colors} from '../../assets/colors';
 
 const styles = StyleSheet.create({
   labelStyle: {
     fontSize: 16,
-    fontFamily: font.MEDIUM,
     color: colors.text,
     marginHorizontal: 2,
     width: `85%`,
-    // backgroundColor: 'red',
     textAlign: 'center',
   },
   containerStyle: {
     marginVertical: 2.5,
     borderRadius: 8,
-    // borderWidth: 0.6,
     marginHorizontal: 20,
     backgroundColor: colors.primary,
     height: 44,
@@ -30,7 +26,6 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 16,
-    fontFamily: font.REGULAR,
     color: colors.text,
     width: '95%',
   },
@@ -39,12 +34,10 @@ const styles = StyleSheet.create({
   },
   assistiveText: {
     fontSize: 12,
-    fontFamily: font.REGULAR,
     color: colors.grey,
   },
   errorText: {
     fontSize: 12,
-    fontFamily: font.REGULAR,
     color: colors.error,
   },
 });

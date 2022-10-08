@@ -1,11 +1,10 @@
 import {View, TextInput, StyleProp} from 'react-native';
 import React, {ReactNode} from 'react';
 
-import {AppText} from '@Components';
-
 // Styles Import
 import styles from './InputStyles';
-import {colors} from '../../../constants/colors';
+import {colors} from '../../assets/colors';
+import AppText from '../Text/AppText';
 
 export interface InputProps {
   value?: string;
@@ -36,7 +35,7 @@ const Input = (props: InputProps) => {
     containerStyle,
     labelStyle,
     hideLabel,
-    autoFocus = true,
+    autoFocus = false,
     assistiveText,
     assistiveTextStyle,
     renderIcon,
